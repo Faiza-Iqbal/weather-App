@@ -61,7 +61,7 @@ export const TemperatureChart = () => {
   const dayIndex: number = 0;
   weather?.forecast?.forecastday[dayIndex]?.hour.map((hour: any) => {
     values.push({
-      x: new Date(hour?.time_epoch),
+      x: new Date(hour?.time_epoch * 1000),
       y: hour?.temp_c,
     });
   });
