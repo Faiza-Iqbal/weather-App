@@ -46,11 +46,8 @@ export const options: any = {
   },
 };
 
-export const TemperatureChart = () => {
+export const WindGraph = () => {
   const weather = useSelector((state: any) => state?.weather);
-  console.log("weather", weather);
-
-  const unit = useSelector((state: any) => state?.unit);
 
   const dayIndex: number = 0;
   const values: any = [];
@@ -58,7 +55,7 @@ export const TemperatureChart = () => {
   weather?.forecast?.forecastday[dayIndex]?.hour.map((hour: any) => {
     values.push({
       x: new Date(hour?.time_epoch * 1000),
-      y: unit === "C" ? hour?.temp_c : hour?.temp_f,
+      y: hour?.wind_kph,
     });
   });
 

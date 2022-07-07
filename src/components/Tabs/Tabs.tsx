@@ -4,6 +4,9 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useStyles } from "./Tabs.styled";
+import { PrecipitationGraph } from "../PrecipitationGraph/PrecipitationGraph";
+import { TemperatureChart } from "../TemperatureGraph/TemperatureGraph";
+import { WindGraph } from "../WindGraph/WindGraph";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -47,6 +50,15 @@ const BasicTabs = () => {
 
   return (
     <Box sx={{ width: "100%" }}>
+      <TabPanel value={value} index={0}>
+        <TemperatureChart />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <PrecipitationGraph />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <WindGraph />
+      </TabPanel>
       <Box
         className={classes.tabsStyledContainer}
         sx={{ borderBottom: 1, borderColor: "divider" }}
@@ -61,9 +73,6 @@ const BasicTabs = () => {
           <Tab label="Wind" {...tabProps(2)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}></TabPanel>
-      <TabPanel value={value} index={1}></TabPanel>
-      <TabPanel value={value} index={2}></TabPanel>
     </Box>
   );
 };

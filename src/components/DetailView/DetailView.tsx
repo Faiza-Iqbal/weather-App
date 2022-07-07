@@ -9,7 +9,6 @@ import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
 const DetailView = () => {
   return (
     <Box>
-      <TemperatureChart />
       <BasicTabs />
       <WeeklyForecast />
     </Box>
