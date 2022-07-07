@@ -1,0 +1,8 @@
+.styledAccordion{
+    width: 60vw;
+    margin: 0 auto;
+}
+.styledAccordion .MuiPaper-root.MuiPaper-elevation{
+    background-color: #000;
+    color: #fff;
+}
