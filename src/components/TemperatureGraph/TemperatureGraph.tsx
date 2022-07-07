@@ -48,7 +48,6 @@ export const options: any = {
 
 export const TemperatureChart = () => {
   const weather = useSelector((state: any) => state?.weather);
-  console.log("weather", weather);
 
   const unit = useSelector((state: any) => state?.unit);
 
