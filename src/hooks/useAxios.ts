@@ -10,7 +10,7 @@ type headersType = {
 };
 
 const useAxios = (url: string, headers?: headersType) => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {

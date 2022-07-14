@@ -1,53 +1,35 @@
-import * as React from "react";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { createStyles, makeStyles } from "@mui/styles";
-import { primary_light, secondary_light } from "../../styles/colorVariables";
-import { useDispatch, useSelector } from "react-redux";
-import { setUnit } from "../../Redux/Reducers/tempUnitSlice";
+// lib
+import { Box } from "@mui/material";
+import { useDispatch } from "react-redux";
+
+// src
+import { setUnit } from "../../Redux/Reducers/unit/unitSlice";
+import { useStyles } from "./ToggleButton.style";
 
 const ToggleButtons = () => {
   const classes = useStyles();
-  const unit = useSelector((state: any) => state?.unit);
   const dispatch = useDispatch();
 
-  const toggleUnit = () => dispatch(setUnit(unit === "C" ? "F" : "C"));
+  const toggleUnit = (tempUnit: "C" | "F") => {
+    dispatch(setUnit(tempUnit));
+  };
 
   return (
-    <ToggleButtonGroup onChange={toggleUnit}>
-      <ToggleButton
+    <Box>
+      <span
         className={classes.toggleSuperscript}
-        value="left"
-        aria-label="left aligned"
+        onClick={() => toggleUnit("C")}
       >
         ℃
-      </ToggleButton>
-      <ToggleButton
+      </span>
+      <span
         className={classes.toggleSuperscript}
-        value="center"
-        aria-label="centered"
+        onClick={() => toggleUnit("F")}
       >
         ℉
-      </ToggleButton>
-    </ToggleButtonGroup>
+      </span>
+    </Box>
   );
 };
-
-export const useStyles = makeStyles(() =>
-  createStyles({
-    toggleSuperscript: {
-      "&.MuiButtonBase-root.MuiToggleButton-root": {
-        border: "none",
-        top: "-10px",
-        padding: "4px",
-        color: `${secondary_light}`,
-      },
-      "&.MuiButtonBase-root.MuiToggleButton-root.Mui-selected ": {
-        backgroundColor: "transparent",
-        color: `${primary_light}`,
-      },
-    },
-  })
-);
 
 export default ToggleButtons;

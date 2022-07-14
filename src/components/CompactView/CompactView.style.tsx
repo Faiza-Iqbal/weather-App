@@ -1,5 +1,6 @@
+import styled from "@emotion/styled";
 import { createStyles, makeStyles } from "@mui/styles";
-import { primary_light, secondary_light } from "../../styles/colorVariables";
+import { secondary_light } from "../../styles/colorVariables";
 
 export const useStyles = makeStyles(() =>
   createStyles({
@@ -15,8 +16,11 @@ export const useStyles = makeStyles(() =>
       alignItems: "center",
       position: "relative",
     },
-    fontStyled: {
-      color: `${primary_light}`,
-    },
   })
 );
+
+export const SuperScript = styled.sup({
+  fontSize: "16px",
+  position: "absolute",
+  top: 0,
+});

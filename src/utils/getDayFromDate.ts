@@ -10,6 +10,5 @@ export const getDayFromDateString = (date: string) => {
     "Saturday",
     "Sunday",
   ];
-
   return days[day];
 };

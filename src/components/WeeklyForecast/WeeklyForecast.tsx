@@ -1,6 +1,7 @@
 // lib
 import { Avatar, Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import { stateType } from "../../Redux/types";
 
 // utils
 import { getDayFromDateString } from "../../utils/getDayFromDate";
@@ -9,24 +10,21 @@ import { getDayFromDateString } from "../../utils/getDayFromDate";
 import { useStyles } from "./WeeklyForecast.style";
 
 const WeeklyForecast = () => {
-  const weather = useSelector((state: any) => state?.weather);
+  const weather = useSelector((state: stateType) => state?.weather);
   const classes = useStyles();
-
-  const {
-    forecast: { forecastday },
-  } = weather;
 
   return (
     <Box className={classes.styledPanel}>
-      {forecastday.map((day: any, index: number) => (
-        <Box key={index}>
-          <Typography>{getDayFromDateString(day?.date)}</Typography>
-          <Avatar src={day?.day?.condition?.icon} />
-          <Typography>
-            {day?.day?.maxtemp_c}&deg; / {day?.day?.mintemp_c}&deg;
-          </Typography>
-        </Box>
-      ))}
+      {weather &&
+        weather.forecast.forecastday.map((dayObj, index: number) => (
+          <Box key={index}>
+            <Typography>{getDayFromDateString(dayObj?.date)}</Typography>
+            <Avatar src={dayObj?.day?.condition?.icon} />
+            <Typography>
+              {dayObj?.day?.maxtemp_c}&deg; / {dayObj?.day?.mintemp_c}&deg;
+            </Typography>
+          </Box>
+        ))}
     </Box>
   );
 };

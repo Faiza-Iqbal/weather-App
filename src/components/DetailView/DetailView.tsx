@@ -2,7 +2,7 @@
 import { Box } from "@mui/material";
 
 // src
-import BasicTabs from "../Tabs/Tabs";
+import BasicTabs from "../CustomTabs/CustomTabs";
 import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
 
 const DetailView = () => {

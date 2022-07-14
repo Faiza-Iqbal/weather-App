@@ -4,22 +4,22 @@ import { useSelector } from "react-redux";
 
 // src
 import ToggleButtons from "../ToggleButton/ToggleButton";
+import { stateType } from "../../Redux/types";
 
 // utils
 import { getDayFromDateString } from "../../utils/getDayFromDate";
 
 // style
-import { useStyles } from "./CompactView.style";
-import "./CompactView.css";
+import { SuperScript, useStyles } from "./CompactView.style";
 
 type CompactViewType = {
-  handleChange: any;
+  handleAccordion: () => void;
 };
 
-const CompactView = ({ handleChange }: CompactViewType) => {
+const CompactView = ({ handleAccordion }: CompactViewType) => {
   const classes = useStyles();
-  const weather = useSelector((state: any) => state?.weather);
-  const unit = useSelector((state: any) => state?.unit);
+  const weather = useSelector((state: stateType) => state.weather);
+  const unit = useSelector((state: stateType) => state.unit);
 
   const {
     current: {
@@ -43,9 +43,9 @@ const CompactView = ({ handleChange }: CompactViewType) => {
         <Grid item sm={4} md={4} lg={3}>
           <Typography variant="h3">
             {unit === "C" ? celsiusTemp : fahrenheitTemp}
-            <sup className="superScript">
+            <SuperScript>
               <ToggleButtons />
-            </sup>
+            </SuperScript>
           </Typography>
         </Grid>
         <Grid item sm={4} md={3} lg={3}>
@@ -59,7 +59,7 @@ const CompactView = ({ handleChange }: CompactViewType) => {
             Wind: {wind_kph}kph
           </Typography>
         </Grid>
-        <Grid item sm={12} md={4} lg={5} onClick={handleChange("panel1")}>
+        <Grid item sm={12} md={4} lg={5} onClick={handleAccordion}>
           <Typography variant="h4">{name}</Typography>
           <Typography>{getDayFromDateString(forecastDate)}</Typography>
           <Typography>{text}</Typography>

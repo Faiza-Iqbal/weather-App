@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import citiesReducer from "./Reducers/citiesSlice";
-import weatherReducer from "./Reducers/weatherForecastSlice";
-import temperatureUnitReducer from "./Reducers/tempUnitSlice";
+import citiesReducer from "./Reducers/cities/citiesSlice";
+import weatherReducer from "./Reducers/weather/weatherSlice";
+import temperatureUnitReducer from "./Reducers/unit/unitSlice";
 
 export default configureStore({
   reducer: {

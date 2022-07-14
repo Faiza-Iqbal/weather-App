@@ -1,32 +1,33 @@
+// lib
 import { useState } from "react";
+import {
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+
+// src
 import DetailView from "../DetailView/DetailView";
 import CompactView from "../CompactView/CompactView";
-import {
-  AccordionDetails,
-  AccordionSummary,
-  Accordion,
-} from "./Accordion.style";
 
-import "./Accordion.css";
+// style
+import "./Accordion.scss";
 
 const CustomizedAccordions = () => {
-  const [expanded, setExpanded] = useState<string | false>("panel1");
-
-  const handleChange = (panel: string) => () => {
-    setExpanded(expanded ? false : panel);
-  };
+  const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="styledAccordion">
-      <Accordion expanded={expanded === "panel1"}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <CompactView handleChange={handleChange} />
+    <Box className="styledAccordion">
+      <Accordion expanded={expanded}>
+        <AccordionSummary>
+          <CompactView handleAccordion={() => setExpanded(!expanded)} />
         </AccordionSummary>
         <AccordionDetails>
           <DetailView />
         </AccordionDetails>
       </Accordion>
-    </div>
+    </Box>
   );
 };
 export default CustomizedAccordions;
