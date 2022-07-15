@@ -22,6 +22,7 @@ export const useInputField = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const cities: citiesType[] = useSelector((state: stateType) => state?.cities);
+
   useEffect(() => {
     (async () => {
       try {
