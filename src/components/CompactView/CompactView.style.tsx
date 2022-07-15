@@ -1,5 +1,7 @@
+// lib
 import styled from "@emotion/styled";
 import { createStyles, makeStyles } from "@mui/styles";
+
 import { secondary_light } from "../../styles/colorVariables";
 
 export const useStyles = makeStyles(() =>
@@ -7,14 +9,19 @@ export const useStyles = makeStyles(() =>
     regularText: {
       "&.MuiTypography-root": {
         fontSize: "14px",
-        color: `${secondary_light}`,
+        color: secondary_light,
       },
     },
+
     marginAutoContainer: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       position: "relative",
+    },
+
+    fullWidth: {
+      width: "100%",
     },
   })
 );

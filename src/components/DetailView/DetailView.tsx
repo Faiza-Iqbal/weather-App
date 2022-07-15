@@ -1,4 +1,3 @@
-// lib
 import { Box } from "@mui/material";
 
 // src

@@ -49,6 +49,7 @@ const options: ChartOptions<"line"> = {
     },
   },
 };
-export const Graph = ({ data }: graphDataType) => {
-  return <Line options={options} data={data} plugins={[ChartDataLabels]} />;
-};
+
+export const Graph = ({ data }: graphDataType) => (
+  <Line options={options} data={data} plugins={[ChartDataLabels]} />
+);

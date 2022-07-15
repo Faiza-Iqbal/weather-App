@@ -11,7 +11,6 @@ import {
 import DetailView from "../DetailView/DetailView";
 import CompactView from "../CompactView/CompactView";
 
-// style
 import "./Accordion.scss";
 
 const CustomizedAccordions = () => {

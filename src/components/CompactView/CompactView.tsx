@@ -4,12 +4,8 @@ import { useSelector } from "react-redux";
 
 // src
 import ToggleButtons from "../ToggleButton/ToggleButton";
-import { stateType } from "../../Redux/types";
-
-// utils
+import { stateType } from "../../store/types";
 import { getDayFromDateString } from "../../utils/getDayFromDate";
-
-// style
 import { SuperScript, useStyles } from "./CompactView.style";
 
 type CompactViewType = {
@@ -35,7 +31,7 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
   } = weather;
 
   return (
-    <Box className={classes.marginAutoContainer} sx={{ width: "100%" }}>
+    <Box className={`${classes.marginAutoContainer} ${classes.fullWidth}`}>
       <Grid container>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Avatar src={icon} />

@@ -2,7 +2,7 @@
 import { Autocomplete, Box, ListItem, TextField } from "@mui/material";
 
 // src
-import { citiesType } from "../../Redux/Reducers/cities/types";
+import { cityType } from "../../store/cities/types";
 import { useInputField } from "./useInputField";
 
 const InputField = () => {
@@ -13,9 +13,9 @@ const InputField = () => {
       <Box className="sectionPadding">
         <Autocomplete
           options={cities}
-          sx={{ width: 300 }}
+          className={classes.autoCompleteStyled}
           getOptionLabel={getOptionLabel}
-          onChange={(_, city: citiesType | null) => getWeatherReport(city)}
+          onChange={(_, city: cityType | null) => getWeatherReport(city)}
           renderInput={(city) => (
             <TextField {...city} placeholder="City Name or Zip Code" />
           )}

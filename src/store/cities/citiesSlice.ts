@@ -1,12 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { citiesType } from "./types";
+import { cityType } from "./types";
 
-const initialState: Array<citiesType> = [
-  {
-    city: "",
-    zip_code: 0,
-  },
-];
+const initialState: Array<cityType> = [];
 
 const citiesSlice = createSlice({
   name: "cities",

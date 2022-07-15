@@ -12,7 +12,10 @@ export const useStyles = makeStyles(() =>
       position: "relative",
     },
     fontStyled: {
-      color: `${primary_light}`,
+      color: primary_light,
+    },
+    autoCompleteStyled: {
+      width: "300px",
     },
   })
 );

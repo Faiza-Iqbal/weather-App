@@ -6,13 +6,13 @@ import { useSelector } from "react-redux";
 import CustomizedAccordions from "../../components/Accordion/Accordion";
 import Header from "../../components/Header/Header";
 import InputField from "../../components/InputField/InputField";
-import { stateType } from "../../Redux/types";
+import { stateType } from "../../store/types";
 
 const LandingPage = () => {
   const weather = useSelector((state: stateType) => state.weather);
 
   return (
-    <Box sx={{ pb: 8 }}>
+    <Box className="pb8">
       <Header />
       <Container>
         <InputField />

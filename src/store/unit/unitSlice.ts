@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: string = "C";
+const initialState: "C" | "F" = "C";
 
 const unitSlice = createSlice({
   name: "unit",

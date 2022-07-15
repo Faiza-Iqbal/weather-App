@@ -17,7 +17,7 @@ const TabPanel = (props: TabPanelProps) => {
       aria-labelledby={`${index}`}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box className="pd3">
           <Typography>{children}</Typography>
         </Box>
       )}

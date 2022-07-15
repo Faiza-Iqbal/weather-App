@@ -1,12 +1,12 @@
-import * as React from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import { useStyles } from "./CustomTabs.styled";
+// lib
+import { useState } from "react";
+import { Tabs, Tab, Box } from "@mui/material";
+
+// src
 import { Graph } from "../Graph/Graph";
 import { useTabs } from "./useCustomTabs";
-import { useState } from "react";
 import TabPanel from "./TabPanel";
+import { useStyles } from "./CustomTabs.styled";
 
 const tabProps = (index: number) => {
   return {
@@ -24,7 +24,7 @@ const CustomTabs = () => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box>
       <Box className={classes.tabsStyledContainer}>
         <Tabs value={value} onChange={(e, value) => handleChange(value)}>
           <Tab label="Temperature" {...tabProps(0)} />

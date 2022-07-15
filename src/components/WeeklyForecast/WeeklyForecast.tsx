@@ -1,7 +1,7 @@
 // lib
 import { Avatar, Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { stateType } from "../../Redux/types";
+import { stateType } from "../../store/types";
 
 // utils
 import { getDayFromDateString } from "../../utils/getDayFromDate";

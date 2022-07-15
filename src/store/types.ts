@@ -1,8 +1,8 @@
-import { citiesType } from "./Reducers/cities/types";
-import { weatherType } from "./Reducers/weather/types";
+import { cityType } from "./cities/types";
+import { weatherType } from "./weather/types";
 
 export type stateType = {
-  cities: citiesType[];
+  cities: cityType[];
   unit: string;
   weather: weatherType;
 };

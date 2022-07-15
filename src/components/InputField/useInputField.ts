@@ -6,22 +6,20 @@ import {
   CITIES_API,
   FORECAST_DAYS,
 } from "../../constants/apiConstants";
-import { setCities } from "../../Redux/Reducers/cities/citiesSlice";
-import { setWeather } from "../../Redux/Reducers/weather/weatherSlice";
+import { setCities } from "../../store/cities/citiesSlice";
+import { setWeather } from "../../store/weather/weatherSlice";
 
-// utils
+// src
 import { callToApi } from "../../utils/api";
+import { cityType } from "../../store/cities/types";
+import { stateType } from "../../store/types";
 
-import { citiesType } from "../../Redux/Reducers/cities/types";
-import { stateType } from "../../Redux/types";
-
-// style
 import { useStyles } from "./InputField.style";
 
 export const useInputField = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const cities: citiesType[] = useSelector((state: stateType) => state?.cities);
+  const cities: cityType[] = useSelector((state: stateType) => state?.cities);
 
   useEffect(() => {
     (async () => {
@@ -38,7 +36,7 @@ export const useInputField = () => {
     })();
   }, []);
 
-  const getWeatherReport = (option: citiesType | null) => {
+  const getWeatherReport = (option: cityType | null) => {
     const cityName = option?.city;
     if (!cityName) return;
     (async () => {
@@ -55,7 +53,7 @@ export const useInputField = () => {
     })();
   };
 
-  const getOptionLabel = (city: citiesType) => city.city;
+  const getOptionLabel = (city: cityType) => city.city;
 
   return { getWeatherReport, getOptionLabel, classes, cities };
 };
