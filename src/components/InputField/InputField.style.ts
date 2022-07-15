@@ -10,6 +10,7 @@ export const useStyles = makeStyles(() =>
       justifyContent: "center",
       alignItems: "center",
       position: "relative",
+      padding: "50px 0px",
     },
     fontStyled: {
       color: primary_light,

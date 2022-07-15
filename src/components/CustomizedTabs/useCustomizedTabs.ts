@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { hourType, stateType } from "../../store/types";
 
-export const useTabs = () => {
+export const useCustomizedTabs = () => {
   const weather = useSelector((state: stateType) => state?.weather);
   const unit = useSelector((state: stateType) => state?.unit);
 

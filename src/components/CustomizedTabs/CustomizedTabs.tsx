@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Tabs, Tab, Box } from "@mui/material";
 
 // src
-import { Graph } from "../Graph/Graph";
-import { useTabs } from "./useCustomTabs";
+import { Graph } from "../Graph";
+import { useCustomizedTabs } from "./useCustomizedTabs";
 import TabPanel from "./TabPanel";
-import { useStyles } from "./CustomTabs.styled";
+import { useStyles } from "./CustomizedTabs.styled";
 
 const tabProps = (index: number) => {
   return {
@@ -14,19 +14,16 @@ const tabProps = (index: number) => {
   };
 };
 
-const CustomTabs = () => {
+const CustomizedTabs = () => {
   const [value, setValue] = useState(0);
   const classes = useStyles();
-  const { temperatureDataSet, precipitationDataSet, windDataSet } = useTabs();
-
-  const handleChange = (newValue: number) => {
-    setValue(newValue);
-  };
+  const { temperatureDataSet, precipitationDataSet, windDataSet } =
+    useCustomizedTabs();
 
   return (
     <Box>
       <Box className={classes.tabsStyledContainer}>
-        <Tabs value={value} onChange={(e, value) => handleChange(value)}>
+        <Tabs value={value} onChange={(e, value) => setValue(value)}>
           <Tab label="Temperature" {...tabProps(0)} />
           <Tab label="Precipitation" {...tabProps(1)} />
           <Tab label="Wind" {...tabProps(2)} />
@@ -45,4 +42,4 @@ const CustomTabs = () => {
   );
 };
 
-export default CustomTabs;
+export default CustomizedTabs;

@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 
 // src
-import BasicTabs from "../CustomTabs/CustomTabs";
-import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
+import CustomizedTabs from "../CustomizedTabs";
+import WeeklyForecast from "../WeeklyForecast";
 
 const DetailView = () => {
   return (
     <Box>
-      <BasicTabs />
+      <CustomizedTabs />
       <WeeklyForecast />
     </Box>
   );

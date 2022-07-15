@@ -3,9 +3,9 @@ import { Box, Container } from "@mui/material";
 import { useSelector } from "react-redux";
 
 // src
-import CustomizedAccordions from "../../components/Accordion/Accordion";
-import Header from "../../components/Header/Header";
-import InputField from "../../components/InputField/InputField";
+import CustomizedAccordions from "../../components/ViewToggler";
+import Header from "../../components/Header";
+import InputField from "../../components/InputField";
 import { stateType } from "../../store/types";
 
 const LandingPage = () => {

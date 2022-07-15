@@ -8,16 +8,16 @@ import {
 } from "@mui/material";
 
 // src
-import DetailView from "../DetailView/DetailView";
-import CompactView from "../CompactView/CompactView";
+import DetailView from "../DetailView";
+import CompactView from "../CompactView";
+import { useStyles } from "./ViewTogglerStyled.style";
 
-import "./Accordion.scss";
-
-const CustomizedAccordions = () => {
+const CustomizedAccordion = () => {
   const [expanded, setExpanded] = useState(true);
+  const classes = useStyles();
 
   return (
-    <Box className="styledAccordion">
+    <Box className={classes.styledAccordion}>
       <Accordion expanded={expanded}>
         <AccordionSummary>
           <CompactView handleAccordion={() => setExpanded(!expanded)} />
@@ -29,4 +29,4 @@ const CustomizedAccordions = () => {
     </Box>
   );
 };
-export default CustomizedAccordions;
+export default CustomizedAccordion;

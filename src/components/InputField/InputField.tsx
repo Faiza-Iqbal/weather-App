@@ -10,31 +10,29 @@ const InputField = () => {
 
   return (
     <Box className={classes.marginAutoContainer}>
-      <Box className="sectionPadding">
-        <Autocomplete
-          options={cities}
-          className={classes.autoCompleteStyled}
-          getOptionLabel={getOptionLabel}
-          onChange={(_, city: cityType | null) => getWeatherReport(city)}
-          renderInput={(city) => (
-            <TextField {...city} placeholder="City Name or Zip Code" />
-          )}
-          renderOption={(props, city) => {
-            return (
-              <ListItem {...props} key={city.zip_code}>
-                {`${city.city} (${city.zip_code})`}
-              </ListItem>
-            );
-          }}
-          filterOptions={(options, { inputValue }) =>
-            options.filter(
-              (city) =>
-                city.city.toLowerCase().includes(inputValue.toLowerCase()) ||
-                city.zip_code.toString().includes(inputValue)
-            )
-          }
-        />
-      </Box>
+      <Autocomplete
+        options={cities}
+        className={classes.autoCompleteStyled}
+        getOptionLabel={getOptionLabel}
+        onChange={(_, city: cityType | null) => getWeatherReport(city)}
+        renderInput={(city) => (
+          <TextField {...city} placeholder="City Name or Zip Code" />
+        )}
+        renderOption={(props, city) => {
+          return (
+            <ListItem {...props} key={city.zip_code}>
+              {`${city.city} (${city.zip_code})`}
+            </ListItem>
+          );
+        }}
+        filterOptions={(options, { inputValue }) =>
+          options.filter(
+            (city) =>
+              city.city.toLowerCase().includes(inputValue.toLowerCase()) ||
+              city.zip_code.toString().includes(inputValue)
+          )
+        }
+      />
     </Box>
   );
 };

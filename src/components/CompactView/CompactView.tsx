@@ -3,7 +3,7 @@ import { Avatar, Box, Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 // src
-import ToggleButtons from "../ToggleButton/ToggleButton";
+import ToggleButtons from "../ToggleButton";
 import { stateType } from "../../store/types";
 import { getDayFromDateString } from "../../utils/getDayFromDate";
 import { SuperScript, useStyles } from "./CompactView.style";
