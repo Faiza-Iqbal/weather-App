@@ -30,7 +30,7 @@ export const useInputField = () => {
 
         const citiesApiResult = response;
 
-        if (response) dispatch(setCities(citiesApiResult.slice(0, 30)));
+        if (response) dispatch(setCities(citiesApiResult.slice(0, 150)));
       } catch (err) {
         console.log(err);
       }

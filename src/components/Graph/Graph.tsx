@@ -19,6 +19,7 @@ Chart.register(TimeScale, LinearScale, PointElement, LineElement, Filler);
 
 const options: ChartOptions<"line"> = {
   responsive: true,
+  maintainAspectRatio: false,
   scales: {
     x: {
       type: "time",
@@ -39,7 +40,7 @@ const options: ChartOptions<"line"> = {
         else return null;
       },
       align: "top",
-      offset: 15,
+      offset: 3,
       labels: {
         value: {
           color: "white",

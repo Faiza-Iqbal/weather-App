@@ -40,7 +40,7 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Avatar src={icon} />
         </Grid>
-        <Grid item sm={4} md={4} lg={3}>
+        <Grid xs={5} item sm={4} md={4} lg={3}>
           <Typography variant="h3">
             {unit === "C" ? celsiusTemp : fahrenheitTemp}
             <SuperScript>
@@ -48,7 +48,7 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
             </SuperScript>
           </Typography>
         </Grid>
-        <Grid item sm={4} md={3} lg={3}>
+        <Grid item xs={6} sm={3} md={3} lg={3}>
           <Typography className={classes.regularText}>
             Precipitation:{precipitation}%
           </Typography>
@@ -59,7 +59,7 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
             Wind: {wind_kph}kph
           </Typography>
         </Grid>
-        <Grid item sm={12} md={4} lg={5} onClick={handleAccordion}>
+        <Grid item xs={12} sm={4} md={4} lg={5} onClick={handleAccordion}>
           <Typography variant="h4">{name}</Typography>
           <Typography>{getDayFromDateString(forecastDate)}</Typography>
           <Typography>{text}</Typography>
