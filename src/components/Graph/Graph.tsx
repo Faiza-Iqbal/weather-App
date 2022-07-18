@@ -20,6 +20,7 @@ Chart.register(TimeScale, LinearScale, PointElement, LineElement, Filler);
 const options: ChartOptions<"line"> = {
   responsive: true,
   maintainAspectRatio: false,
+  aspectRatio: 2,
   scales: {
     x: {
       type: "time",
