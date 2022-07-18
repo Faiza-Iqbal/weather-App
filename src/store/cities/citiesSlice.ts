@@ -17,12 +17,7 @@ const citiesSlice = createSlice({
     setCities: (_, action) => action.payload,
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchCities.pending, (state) => (state.status = "pending"));
     builder.addCase(fetchCities.fulfilled, (_, action) => action.payload);
-    builder.addCase(
-      fetchCities.rejected,
-      (state) => (state.status = "rejected")
-    );
   },
 });
 
