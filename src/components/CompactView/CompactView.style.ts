@@ -18,9 +18,6 @@ export const useStyles = makeStyles(() =>
       justifyContent: "center",
       alignItems: "center",
       position: "relative",
-    },
-
-    fullWidth: {
       width: "100%",
     },
   })

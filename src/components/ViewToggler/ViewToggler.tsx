@@ -12,7 +12,7 @@ import DetailView from "../DetailView";
 import CompactView from "../CompactView";
 import { useStyles } from "./ViewTogglerStyled.style";
 
-const CustomizedAccordion = () => {
+const ViewToggler = () => {
   const [expanded, setExpanded] = useState(true);
   const classes = useStyles();
 
@@ -20,7 +20,7 @@ const CustomizedAccordion = () => {
     <Box className={classes.styledAccordion}>
       <Accordion expanded={expanded}>
         <AccordionSummary>
-          <CompactView handleAccordion={() => setExpanded(!expanded)} />
+          <CompactView handleView={() => setExpanded(!expanded)} />
         </AccordionSummary>
         <AccordionDetails>
           <DetailView />
@@ -29,4 +29,4 @@ const CustomizedAccordion = () => {
     </Box>
   );
 };
-export default CustomizedAccordion;
+export default ViewToggler;

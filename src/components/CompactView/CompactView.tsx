@@ -4,15 +4,15 @@ import { useSelector } from "react-redux";
 
 // src
 import ToggleButtons from "../ToggleButton";
-import { stateType } from "../../store/types";
 import { getDayFromDateString } from "../../utils/getDayFromDate";
+import { stateType } from "../../store/types";
 import { SuperScript, useStyles } from "./CompactView.style";
 
 type CompactViewType = {
-  handleAccordion: () => void;
+  handleView: () => void;
 };
 
-const CompactView = ({ handleAccordion }: CompactViewType) => {
+const CompactView = ({ handleView }: CompactViewType) => {
   const classes = useStyles();
   const weather = useSelector((state: stateType) => state.weather);
   const unit = useSelector((state: stateType) => state.unit);
@@ -31,12 +31,12 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
   } = weather;
 
   return (
-    <Box className={`${classes.marginAutoContainer} ${classes.fullWidth}`}>
+    <Box className={classes.marginAutoContainer}>
       <Grid container>
         <Grid item xs={12} sm={1} md={1} lg={1}>
           <Avatar src={icon} />
         </Grid>
-        <Grid xs={5} item sm={4} md={4} lg={3}>
+        <Grid item xs={5} sm={4} md={4} lg={3}>
           <Typography variant="h3">
             {unit === "C" ? celsiusTemp : fahrenheitTemp}
             <SuperScript>
@@ -55,7 +55,7 @@ const CompactView = ({ handleAccordion }: CompactViewType) => {
             Wind: {wind_kph}kph
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4} md={4} lg={5} onClick={handleAccordion}>
+        <Grid item xs={12} sm={4} md={4} lg={5} onClick={handleView}>
           <Typography variant="h4">{name}</Typography>
           <Typography>{getDayFromDateString(forecastDate)}</Typography>
           <Typography>{text}</Typography>

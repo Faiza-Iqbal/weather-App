@@ -4,29 +4,23 @@ import { Tabs, Tab, Box } from "@mui/material";
 
 // src
 import { Graph } from "../Graph";
-import { useCustomizedTabs } from "./useCustomizedTabs";
+import { useTabsNavigation } from "./useTabsNavigation";
 import TabPanel from "./TabPanel";
-import { useStyles } from "./CustomizedTabs.styled";
+import { useStyles } from "./TabsNavigation.styled";
 
-const tabProps = (index: number) => {
-  return {
-    id: `${index}`,
-  };
-};
-
-const CustomizedTabs = () => {
+const TabsNavigation = () => {
   const [value, setValue] = useState(0);
   const classes = useStyles();
   const { temperatureDataSet, precipitationDataSet, windDataSet } =
-    useCustomizedTabs();
+    useTabsNavigation();
 
   return (
     <Box>
       <Box className={classes.tabsStyledContainer}>
-        <Tabs value={value} onChange={(e, value) => setValue(value)}>
-          <Tab label="Temperature" {...tabProps(0)} />
-          <Tab label="Precipitation" {...tabProps(1)} />
-          <Tab label="Wind" {...tabProps(2)} />
+        <Tabs value={value} onChange={(_, value) => setValue(value)}>
+          <Tab label="Temperature" id="0" />
+          <Tab label="Precipitation" id="1" />
+          <Tab label="Wind" id="2" />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -42,4 +36,4 @@ const CustomizedTabs = () => {
   );
 };
 
-export default CustomizedTabs;
+export default TabsNavigation;

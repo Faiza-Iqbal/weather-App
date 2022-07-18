@@ -40,7 +40,7 @@ const options: ChartOptions<"line"> = {
         else return null;
       },
       align: "top",
-      offset: 3,
+      offset: -2,
       labels: {
         value: {
           color: "white",

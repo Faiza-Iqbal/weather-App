@@ -1,10 +1,10 @@
 // lib
 import { Avatar, Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { stateType } from "../../store/types";
 
-// utils
+// src
 import { getDayFromDateString } from "../../utils/getDayFromDate";
+import { stateType } from "../../store/types";
 
 // style
 import { useStyles } from "./WeeklyForecast.style";
@@ -16,7 +16,7 @@ const WeeklyForecast = () => {
   return (
     <Box className={classes.styledPanel}>
       {weather &&
-        weather.forecast.forecastday.map((dayObj, index: number) => (
+        weather.forecast.forecastday.map((dayObj, index) => (
           <Box key={index}>
             <Typography>{getDayFromDateString(dayObj?.date)}</Typography>
             <Avatar src={dayObj?.day?.condition?.icon} />

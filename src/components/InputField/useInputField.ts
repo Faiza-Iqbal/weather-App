@@ -8,6 +8,7 @@ import { AppDispatch, stateType } from "../../store/types";
 import { fetchCities } from "../../store/cities/citiesSlice";
 
 import { useStyles } from "./InputField.style";
+import { getWeatherForecast } from "../../store/weather/weatherSlice";
 
 export const useInputField = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,5 +21,8 @@ export const useInputField = () => {
 
   const getOptionLabel = (city: cityType) => city.city;
 
-  return { getOptionLabel, classes, cities, dispatch };
+  const onChange = (city: cityType | null) =>
+    dispatch(getWeatherForecast(city?.city));
+
+  return { getOptionLabel, classes, cities, onChange };
 };

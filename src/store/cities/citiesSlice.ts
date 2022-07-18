@@ -1,7 +1,10 @@
+// lib
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { CITIES_API } from "../../constants/apiConstants";
-import { callToApi } from "../../utils/api";
+
+// src
 import { cityType } from "./types";
+import { callToApi } from "../../utils/api";
+import { CITIES_API } from "../../constants/apiConstants";
 
 const initialState: Array<cityType> = [];
 

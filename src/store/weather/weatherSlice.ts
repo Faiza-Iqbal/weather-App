@@ -1,4 +1,7 @@
+// lib
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+// src
 import {
   API_KEY,
   FORECAST_DAYS,
@@ -31,6 +34,7 @@ export const getWeatherForecast = createAsyncThunk(
     const response = await callToApi(
       `${WEATHER_API_BASE_URL}v1/forecast.json?key=${API_KEY}&q=${cityName}&days=${FORECAST_DAYS}`
     );
+
     return response;
   }
 );

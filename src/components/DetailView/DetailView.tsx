@@ -1,15 +1,14 @@
 import { Box } from "@mui/material";
 
 // src
-import CustomizedTabs from "../CustomizedTabs";
+import CustomizedTabs from "../TabsNavigation";
 import WeeklyForecast from "../WeeklyForecast";
 
-const DetailView = () => {
-  return (
-    <Box>
-      <CustomizedTabs />
-      <WeeklyForecast />
-    </Box>
-  );
-};
+const DetailView = () => (
+  <Box>
+    <CustomizedTabs />
+    <WeeklyForecast />
+  </Box>
+);
+
 export default DetailView;

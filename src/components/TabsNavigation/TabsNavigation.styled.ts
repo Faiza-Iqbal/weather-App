@@ -8,6 +8,7 @@ export const useStyles = makeStyles(() =>
       alignItems: "center",
       position: "relative",
     },
+
     tabsStyledContainer: {
       "& .MuiButtonBase-root.MuiTab-root": {
         color: "#fff",
