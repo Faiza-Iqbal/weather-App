@@ -3,10 +3,11 @@ import { Autocomplete, Box, ListItem, TextField } from "@mui/material";
 
 // src
 import { cityType } from "../../store/cities/types";
+import { getWeatherForecast } from "../../store/weather/weatherSlice";
 import { useInputField } from "./useInputField";
 
 const InputField = () => {
-  const { getWeatherReport, getOptionLabel, classes, cities } = useInputField();
+  const { getOptionLabel, classes, cities, dispatch } = useInputField();
 
   return (
     <Box className={classes.marginAutoContainer}>
@@ -14,7 +15,9 @@ const InputField = () => {
         options={cities}
         className={classes.autoCompleteStyled}
         getOptionLabel={getOptionLabel}
-        onChange={(_, city: cityType | null) => getWeatherReport(city)}
+        onChange={(_, city: cityType | null) =>
+          dispatch(getWeatherForecast(city?.city))
+        }
         renderInput={(city) => (
           <TextField {...city} placeholder="City Name or Zip Code" />
         )}

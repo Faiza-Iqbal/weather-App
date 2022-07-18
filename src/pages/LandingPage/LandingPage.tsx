@@ -10,7 +10,6 @@ import { stateType } from "../../store/types";
 
 const LandingPage = () => {
   const weather = useSelector((state: stateType) => state.weather);
-
   return (
     <Box className="pb8">
       <Header />

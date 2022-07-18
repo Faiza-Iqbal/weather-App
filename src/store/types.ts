@@ -1,3 +1,4 @@
+import store from ".";
 import { cityType } from "./cities/types";
 import { weatherType } from "./weather/types";
 
@@ -14,3 +15,5 @@ export type hourType = {
   temp_c: number;
   temp_f: number;
 };
+
+export type AppDispatch = typeof store.dispatch;
